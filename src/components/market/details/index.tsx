@@ -3,6 +3,7 @@ import { Text, View } from "react-native";
 import { styles } from "./style";
 import Info from "../info";
 import { IconMapPin, IconPhone, IconTicket } from "@tabler/icons-react-native";
+import { colors } from "../../../styles/theme";
 
 export type PropsDetails = {
   name: string;
@@ -24,12 +25,15 @@ const Details: React.FC<Props> = ({ data }) => {
     <View style={styles.container}>
       <Text style={styles.name}>{data.name}</Text>
       <Text style={styles.description}>{data.description}</Text>
+      <View style={styles.couponsBox}>
+        <IconTicket size={20} color={colors.red.base} />
+        <Text style={styles.couponsTotal}>{data.coupons}</Text>
+        <Text
+          style={styles.couponsText}
+        >{`cupons disponíveis`}</Text>
+      </View>
       <View style={styles.group}>
         <Text style={styles.title}>Informações</Text>
-        <Info
-          description={`${data.coupons} cupons disponíveis`}
-          icon={IconTicket}
-        />
         <Info description={data.address} icon={IconMapPin} />
         <Info description={data.phone} icon={IconPhone} />
       </View>

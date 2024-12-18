@@ -9,6 +9,7 @@ import Coupon from "../../components/market/coupon";
 import { Button } from "../../components/button";
 import { CameraView, useCameraPermissions } from "expo-camera";
 import { ScrollView } from "react-native-gesture-handler";
+import { IconMapPin, IconScan } from "@tabler/icons-react-native";
 type MarketProps = PropsDetails & {
   cover: string;
 };
@@ -106,9 +107,15 @@ const Market: React.FC = () => {
       <View
         style={{
           padding: 32,
+          flexDirection: 'row',
+          gap: 14
         }}
       >
-        <Button onPress={handleOpenCamera}>
+        <Button style={{width: 60}} onPress={()=> router.push({pathname: '/location', params: {market: JSON.stringify(market)}})}>
+          <Button.Icon icon={IconMapPin}/>
+        </Button>
+        <Button style={{width:250}} onPress={handleOpenCamera}>
+          <Button.Icon icon={IconScan}/>
           <Button.Title> Ler QR Code</Button.Title>
         </Button>
       </View>

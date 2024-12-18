@@ -12,23 +12,44 @@ export const styles = StyleSheet.create({
   name: {
     fontSize: 20,
     fontFamily: fontFamily.bold,
-    color: colors.gray[600]
+    color: colors.gray[600],
   },
   description: {
     fontSize: 16,
     fontFamily: fontFamily.regular,
     color: colors.gray[500],
     marginTop: 12,
-    marginBottom: 32,
+    marginBottom: 30,
     lineHeight: 22,
-
+  },
+  couponsBox: {
+    height: 30,
+    backgroundColor: colors.red.light,
+    flexDirection: "row",
+    borderRadius: 5,
+    gap: 10,
+    paddingLeft: 10,
+    alignItems: "center",
+    marginBottom: 20
+  },
+  couponsTotal: {
+    color: colors.gray[500],
+    fontSize: 16,
+    fontFamily: fontFamily.bold,
+  },
+  couponsText: {
+    color: colors.gray[600],
+    fontSize: 16,
+    fontFamily: fontFamily.regular,
+    lineHeight: 22.4,
+    flex: 1,
   },
   group: {
-    width: '100%',
+    width: "100%",
     borderBottomWidth: 1,
     borderBottomColor: colors.gray[200],
     paddingBottom: 16,
-    marginBottom: 16
+    marginBottom: 16,
   },
   title: {
     fontSize: 14,
